@@ -1,3 +1,3 @@
-# Titanic Survival - Data Mining Project 2
+# Predicting the use of Hearing Aid - Data Mining Project 2
 
-## Can we predict which passengers survived the Titanic disaster based on demographic and ticket information?
+## Can we predict the use of hearing aid based on demographic data?
