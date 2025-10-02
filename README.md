@@ -44,7 +44,11 @@ df_combined = pd.merge(df_combined, df_demo, on='SEQN', how='outer')
 # Drop rows missing the target
 df_combined = df_combined.dropna(subset=['AUQ147'])
 
-###Next, I dropped columns with more than 90% missing values and a few specific variables that weren’t relevant.
+```
+
+### Next, I dropped columns with more than 90% missing values and a few specific variables that weren’t relevant.
+
+```python
 
 # Drop columns with very high missingness
 missing_percentages = df_combined.isnull().mean() * 100
@@ -55,10 +59,13 @@ if 'AUQ630' not in columns_to_drop:
     columns_to_drop.append('AUQ630')
 
 df_combined_dropped = df_combined.drop(columns=columns_to_drop)
-Finally, I dropped rows with remaining nulls in the features and selected the target variable.
 
-python
-Copy code
+```
+
+###Finally, I dropped rows with remaining nulls in the features and selected the target variable.
+
+```python
+
 # Separate features and target
 target = df_combined_dropped['AUQ147']
 features = df_combined_dropped.drop('AUQ147', axis=1)
@@ -69,11 +76,15 @@ features = features.drop(['AUATYMTL', 'AUATYMTR'], axis=1)
 # Drop rows with nulls in features
 features_cleaned = features.dropna()
 target_cleaned = target.loc[features_cleaned.index]
-Data Understanding & Visualization
-A quick look at the class distribution shows strong imbalance: most people report not using a hearing aid.
 
-python
-Copy code
+```
+
+##Data Understanding & Visualization
+
+###A quick look at the class distribution shows strong imbalance: most people report not using a hearing aid.
+
+```python
+
 target_cleaned.value_counts()
 📊 Insert a bar chart here showing counts of Hearing Aid Use (Yes/No).
 
