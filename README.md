@@ -1,9 +1,7 @@
-# Predicting the use of Hearing Aid - Data Mining Project 2
+# Predicting the Use of Hearing Aid — Data Mining Project 2
 
 ## Can we predict the use of hearing aid based on demographic data?
 ## Is a skewed dataset sufficient to make predictions that beat the simple majority class baseline?
-
-# Predicting the Use of Hearing Aid — Data Mining Project 2
 
 ## Introduction: The Problem
 For this project, I wanted to explore whether we can **predict the use of a hearing aid** using demographic and audiometric data. This is personally interesting to me since I make and listen to music at high volumes, and I want to understand how age, sex, and hearing-related factors connect to real hearing aid use.  
