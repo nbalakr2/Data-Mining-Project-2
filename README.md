@@ -85,13 +85,14 @@ target_cleaned = target.loc[features_cleaned.index]
 
 target_cleaned.value_counts()
 
-This imbalance means accuracy alone is misleading. Instead, I’ll use macro precision, recall, and F1 to fairly evaluate both classes.
+```
 
-Modeling
+## Modeling
+
 I split the data into training and testing sets (80/20) and trained two models: Logistic Regression and Decision Tree.
 
-python
-Copy code
+```python
+
 from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(
@@ -100,35 +101,43 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 print("Train shape:", X_train.shape)
 print("Test shape:", X_test.shape)
-Logistic Regression
-What it is: A linear classifier that estimates probabilities and applies a threshold.
-Pros: Simple, interpretable, fast.
-Cons: May underfit nonlinear patterns, sensitive to imbalance.
+```
 
-python
-Copy code
+Logistic Regression
+Pros: Simple and interpretable.
+Cons: Looks to underfit nonlinear patterns, sensitive to imbalance.
+
+```python
+
 from sklearn.linear_model import LogisticRegression
 
 lr_model = LogisticRegression(random_state=42, solver="liblinear", max_iter=200)
 lr_model.fit(X_train, y_train)
 lr_pred = lr_model.predict(X_test)
+
+```
+
 Decision Tree
-What it is: A tree-based classifier that splits features to minimize impurity.
+
 Pros: Captures nonlinearity, easy to visualize.
 Cons: Can overfit without pruning/tuning.
 
-python
-Copy code
+```python
+
 from sklearn.tree import DecisionTreeClassifier
 
 dt_classifier = DecisionTreeClassifier(random_state=42, min_samples_split=50)
 dt_classifier.fit(X_train, y_train)
 dt_pred = dt_classifier.predict(X_test)
-Evaluation
+
+```
+
+## Evaluation
+
 I compared model performance to a majority baseline (always predicting “no hearing aid”).
 
-python
-Copy code
+```python
+
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, confusion_matrix
 
 # Baseline accuracy
