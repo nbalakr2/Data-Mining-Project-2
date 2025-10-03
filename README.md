@@ -26,7 +26,7 @@ The **target variable** is AUQ147: â€œDoes this participant use a hearing aid?â€
 ---
 
 ## Pre-processing the Data
-I merged the datasets, dropped columns with very high missingness, and focused on cleaning rows where the hearing aid response was present.
+I merged the datasets, dropped columns with high amounts of recorded null values, and focused on cleaning rows where the hearing aid response was present.
 
 ```python
 import pandas as pd
