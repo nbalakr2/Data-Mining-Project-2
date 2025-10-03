@@ -77,14 +77,13 @@ target_cleaned = target.loc[features_cleaned.index]
 
 ```
 
-##Data Understanding & Visualization
+## Data Understanding & Visualization
 
-###A quick look at the class distribution shows strong imbalance: most people report not using a hearing aid.
+### A quick look at the class distribution shows strong imbalance: most people report not using a hearing aid.
 
 ```python
 
 target_cleaned.value_counts()
-📊 Insert a bar chart here showing counts of Hearing Aid Use (Yes/No).
 
 This imbalance means accuracy alone is misleading. Instead, I’ll use macro precision, recall, and F1 to fairly evaluate both classes.
 
