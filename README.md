@@ -60,7 +60,7 @@ df_combined_dropped = df_combined.drop(columns=columns_to_drop)
 
 ```
 
-###Finally, I dropped rows with remaining nulls in the features and selected the target variable.
+### Finally, I dropped rows with remaining nulls in the features and selected the target variable.
 
 ```python
 
