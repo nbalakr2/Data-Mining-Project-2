@@ -160,13 +160,16 @@ report("Logistic Regression", y_test, lr_pred)
 report("Decision Tree", y_test, dt_pred)
 Expected outcome:
 
+```
+
 Both models beat the baseline accuracy.
 
 Decision Tree may recall more of the minority class (hearing aid users).
 
 Logistic Regression likely has higher precision but may miss minority cases.
 
-Storytelling
+# Storytelling
+
 What I learned:
 
 Age seems to be a strong predictor, which makes sense given hearing aid usage rises with age.
@@ -177,7 +180,8 @@ The Decision Tree picked up nonlinear splits (like sharp jumps in usage around o
 
 Surprise: the models could beat the baseline even without rebalancing, but minority recall was still weak.
 
-Impact
+# Impact
+
 Positive impact: A model like this could help target hearing screenings to groups at higher risk, saving time and resources.
 
 Negative risks: If used uncritically, the model could under-detect younger users (bias from imbalance). This could lead to unfair conclusions.
@@ -189,6 +193,6 @@ CDC NHANES: NHANES Audiometry Data
 
 scikit-learn documentation
 
-Code
-The full notebook is included in this repo for transparency.
-All code snippets shown here are directly from the notebook.
+# Code
+
+https://colab.research.google.com/drive/18RNhTgi-x--4iKU__w8tbRVrDOW8_71s?usp=sharing
